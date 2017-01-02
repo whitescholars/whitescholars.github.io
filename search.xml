@@ -34,14 +34,14 @@ xml=xml.replace(&quot;__&quot;, &quot;_&quot;);
     </entry>
     
     <entry>
-      <title><![CDATA[about]]></title>
-      <url>http://yoursite.com/about/index.html</url>
+      <title><![CDATA[categories]]></title>
+      <url>http://yoursite.com/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
     <entry>
-      <title><![CDATA[categories]]></title>
-      <url>http://yoursite.com/categories/index.html</url>
+      <title><![CDATA[about]]></title>
+      <url>http://yoursite.com/about/index.html</url>
       <content type="html"></content>
     </entry>
     
