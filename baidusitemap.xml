@@ -5,16 +5,25 @@
     
   <url>
     <loc>http://penglei.top/2017/01/02/XStream%E5%B0%86java%E5%AF%B9%E8%B1%A1%E8%BD%AC%E6%8D%A2%E4%B8%BAxml%E6%97%B6%EF%BC%8C%E5%AF%B9%E8%B1%A1%E5%AD%97%E6%AE%B5%E4%B8%AD%E7%9A%84%E4%B8%8B%E5%88%92%E7%BA%BF_%EF%BC%8C%E8%BD%AC%E6%8D%A2%E5%90%8E%E5%8F%98%E6%88%90%E4%BA%86%E4%B8%A4%E4%B8%AA%E7%9A%84%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/</loc>
-    <lastmod>2017-01-02T09:43:11.214Z</lastmod>
+    <lastmod>2017-01-02T12:46:24.966Z</lastmod>
     <data>
         <display>
         <title>XStream将java对象转换为xml时，对象字段中的下划线"_"，转换后变成了两个的解决办法</title>
         <pubTime>2017-01-02T03:50:30.000Z</pubTime>
         
-        <tag>XStream,下划线, bug, xml</tag>
+        <tag>XStream</tag>
+         
+        <tag>下划线</tag>
+         
+        <tag>bug</tag>
+         
+        <tag>xml</tag>
          
          
            
+             
+              <breadCrumb title="Java" url="http://penglei.top/categories/Java/"/>
+          
         </display>
     </data>
     </url>
