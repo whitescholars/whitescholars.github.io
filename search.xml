@@ -34,14 +34,20 @@ xml=xml.replace(&quot;__&quot;, &quot;_&quot;);
     </entry>
     
     <entry>
-      <title><![CDATA[关于]]></title>
-      <url>http://penglei.top/about/index.html</url>
-      <content type="html"></content>
+      <title></title>
+      <url>http://penglei.top/baidu_verify_RiAG0XuUaA.html</url>
+      <content type="html"><![CDATA[RiAG0XuUaA]]></content>
     </entry>
     
     <entry>
       <title><![CDATA[分类]]></title>
       <url>http://penglei.top/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[关于]]></title>
+      <url>http://penglei.top/about/index.html</url>
       <content type="html"></content>
     </entry>
     
