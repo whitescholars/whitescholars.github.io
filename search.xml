@@ -21,7 +21,7 @@
 &lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt;
 &lt;url-pattern&gt;*.action&lt;/url-pattern&gt;
 &lt;/filter-mapping&gt;
-</code></pre><p>&ensp;&ensp;&ensp;&ensp;决懒加载的问题，但是对于很多新手来说，有很多疑问，为什么把这段代码粘贴进去了好像还是没有什么用。<br>所以需要注意的是这段代码一定要放在web.xml文件的最开始，如此方可解决问题。</p>
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;决懒加载的问题，但是对于很多新手来说，有很多疑问，为什么把这段代码粘贴进去了好像还是没有什么用。<br>   &ensp;&ensp;&ensp;&ensp;所以需要注意的是这段代码一定要放在web.xml文件的最开始，如此方可解决问题。</p>
 ]]></content>
     </entry>
     
@@ -56,6 +56,12 @@ xml=xml.replace(&quot;__&quot;, &quot;_&quot;);
     </entry>
     
     <entry>
+      <title><![CDATA[分类]]></title>
+      <url>http://penglei.top/categories/index.html</url>
+      <content type="html"></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[关于]]></title>
       <url>http://penglei.top/about/index.html</url>
       <content type="html"></content>
@@ -64,12 +70,6 @@ xml=xml.replace(&quot;__&quot;, &quot;_&quot;);
     <entry>
       <title><![CDATA[我们只是世界的一偶，如果你想了解我，请点我！]]></title>
       <url>http://penglei.top/tags/index.html</url>
-      <content type="html"></content>
-    </entry>
-    
-    <entry>
-      <title><![CDATA[分类]]></title>
-      <url>http://penglei.top/categories/index.html</url>
       <content type="html"></content>
     </entry>
     
