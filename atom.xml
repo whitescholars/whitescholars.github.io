@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://penglei.top/"/>
-  <updated>2017-01-03T13:53:22.818Z</updated>
+  <updated>2017-01-03T15:37:37.684Z</updated>
   <id>http://penglei.top/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>懒加载session 无法打开 no session or session was closed 解决办法（完美解决）</title>
+    <link href="http://penglei.top/2017/01/03/java-session/"/>
+    <id>http://penglei.top/2017/01/03/java-session/</id>
+    <published>2017-01-03T15:10:29.000Z</published>
+    <updated>2017-01-03T15:37:37.684Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>&ensp;&ensp;&ensp;&ensp;首先说明一下，hibernate的延迟加载特性(lazy)。所谓的延迟加载就是当真正需要查询数据时才执行数据加载操作。因为hibernate当中支持实体对象，外键会与实体对象关联起来。如果没有这一特性，当查询某一个含有外键的实体对象时，hibernate会把其他实体对象的数据都查询出来。简单的来说，当你想查询某个对象时，实际上调用了多条查询语句。有了延迟加载特性，就避免了这种情况的发生，当你真正的使用get另外一个实体对象时，才再执行下面一条查询语句。<br>&ensp;&ensp;&ensp;&ensp;但有些时候，这个特性却会给我们应用中带来一些问题。这个问题相信大家并不陌生了，hibernate的延迟加载(lazy)特性的确不错的优点，如果没了这个特性，我相信大家在处理一些外键的对象时会头大起来，因为效率十分的低。甚至很多人都觉得使用jdbc要比hibernate要高效甚至方便得多，而迫使不去使用hibernate。<br>&ensp;&ensp;&ensp;&ensp;我想说，没错，使用jdbc在效率上的确可能要快许多，但差距也不会太大的，因为hibernate本身就支持多种查询方式，SQL、HQL、 DetachedCriteria等。而相反的，hibernate在维护性上比jdbc强很多，因为是实体对象的关系。我相信如果您使用过jdbc来实现注册功能的话，会深有体会。</p>
+<h3 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h3><p>&ensp;&ensp;&ensp;&ensp;提示session已关闭(no session or session was closed) 触发这个问题的原因在于，hibernate在查询操作完毕的时候会自动的把session关闭掉，为了降低使用的资源。但问题也这样产生了，不要忘了之前所说的hibernate特性，此时再调用get实体方法的时候就会有可能出现这个错误。因为session已经关闭而不能继续执行查询了。</p>
+<h3 id="解决办法"><a href="#解决办法" class="headerlink" title="解决办法"></a>解决办法</h3><h4 id="1-关闭延迟加载特性。"><a href="#1-关闭延迟加载特性。" class="headerlink" title="1. 关闭延迟加载特性。"></a>1. 关闭延迟加载特性。</h4><p>&ensp;&ensp;&ensp;&ensp;操作起来比较简单，因为hibernate的延迟加载特性是在hbm配置里面可控制的。默认lazy=”true”，在many-to-one中添加属性lazy=”false”，就不详细叙述了。</p>
+<pre><code>&lt;many-to-one name=&quot;category&quot; lazy=&quot;false&quot; class=&quot;com.penglei.onlineshop.category.vo.Category&quot; column=&quot;cid&quot;&gt;&lt;/many-to-one&gt;
+</code></pre><p>但使用这个解决办法带来的隐患是十分大的。<br>首先，出现no session or session was closed就证明了您已经在使用外键关联表，如果去掉延迟加载的话，则表示每次查询的开销都会变得十分的大，如果关联表越多，后果也可以想象得到。所以不建议使用这个方法解决。</p>
+<h4 id="2-在session关闭之前把我们想要查询的数据先获取了。"><a href="#2-在session关闭之前把我们想要查询的数据先获取了。" class="headerlink" title="2. 在session关闭之前把我们想要查询的数据先获取了。"></a>2. 在session关闭之前把我们想要查询的数据先获取了。</h4><p>&ensp;&ensp;&ensp;&ensp;然而有时会出现一种情况就是使用第一种方法并不能解决问题。这时我们需要了解一下session什么时候关闭，也就是它的生命周期。通常情况下hibernate会在查询数据关闭session，而使用getHibernateTemplate().get方法查询后会延迟关闭的时间。会在事务结束后才关闭。<br>&ensp;&ensp;&ensp;&ensp;使用拦截器(Interceptor)或过滤器(Filter)控制session。<br>&ensp;&ensp;&ensp;&ensp;spring为解决hibernate这一特性提供的解决方案，可以有效的控制session生命周期。  在web.xml添加一个拦截器：</p>
+<pre><code>&lt;!-- 用于解决懒加载的问题 --&gt;
+&lt;filter&gt;
+&lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt;
+&lt;filter-class&gt;org.springframework.orm.hibernate3.support.OpenSessionInViewFilter&lt;/filter-class&gt;
+&lt;/filter&gt;
+&lt;filter-mapping&gt;
+&lt;filter-name&gt;OpenSessionInViewFilter&lt;/filter-name&gt;
+&lt;url-pattern&gt;*.action&lt;/url-pattern&gt;
+&lt;/filter-mapping&gt;
+</code></pre><p>&ensp;&ensp;&ensp;&ensp;决懒加载的问题，但是对于很多新手来说，有很多疑问，为什么把这段代码粘贴进去了好像还是没有什么用。<br>所以需要注意的是这段代码一定要放在web.xml文件的最开始，如此方可解决问题。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;摘要&quot;&gt;&lt;a href=&quot;#摘要&quot; class=&quot;headerlink&quot; title=&quot;摘要&quot;&gt;&lt;/a&gt;摘要&lt;/h3&gt;&lt;p&gt;&amp;ensp;&amp;ensp;&amp;ensp;&amp;ensp;首先说明一下，hibernate的延迟加载特性(lazy)。所谓的延迟加载就是当真正需要查询
+    
+    </summary>
+    
+      <category term="Java" scheme="http://penglei.top/categories/Java/"/>
+    
+    
+      <category term="no session or session was closed" scheme="http://penglei.top/tags/no-session-or-session-was-closed/"/>
+    
+      <category term="懒加载" scheme="http://penglei.top/tags/%E6%87%92%E5%8A%A0%E8%BD%BD/"/>
+    
+      <category term="Hibernate" scheme="http://penglei.top/tags/Hibernate/"/>
+    
+      <category term="spring" scheme="http://penglei.top/tags/spring/"/>
+    
+  </entry>
   
   <entry>
     <title>XStream将java对象转换为xml时，对象字段中的下划线&quot;_&quot;，转换后变成了两个的解决办法</title>

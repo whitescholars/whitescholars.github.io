@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://penglei.top/2017/01/03/java-session/</loc>
+    <lastmod>2017-01-03T15:37:37.684Z</lastmod>
+    <data>
+        <display>
+        <title>懒加载session 无法打开 no session or session was closed 解决办法（完美解决）</title>
+        <pubTime>2017-01-03T15:10:29.000Z</pubTime>
+        
+        <tag>no session or session was closed</tag>
+         
+        <tag>懒加载</tag>
+         
+        <tag>Hibernate</tag>
+         
+        <tag>spring</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://penglei.top/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://penglei.top/2017/01/02/XStream_java/</loc>
     <lastmod>2017-01-03T13:53:22.818Z</lastmod>
     <data>
