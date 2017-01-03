@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://penglei.top/"/>
-  <updated>2017-01-02T12:46:24.966Z</updated>
+  <updated>2017-01-03T13:51:26.856Z</updated>
   <id>http://penglei.top/</id>
   
   <author>
@@ -20,16 +20,16 @@
     <link href="http://penglei.top/2017/01/02/XStream_java/"/>
     <id>http://penglei.top/2017/01/02/XStream_java/</id>
     <published>2017-01-02T03:50:30.000Z</published>
-    <updated>2017-01-02T12:46:24.966Z</updated>
+    <updated>2017-01-03T13:51:26.856Z</updated>
     
-    <content type="html"><![CDATA[<p>在前几天的一个项目中，由于数据库字段的命名原因 其中有两项：一项叫做”市场价格”一项叫做”商店价格” 为了便于区分，遂分别将其命名为market_price和shop_price.对应的实体类命名于此相似。可是在后台使用xstream将数据读出转换为对xml对象时，前台使用extjs的ajax请求，所有其他的属性在前台都可以被解析，唯独 此二者不可解析，仔细检查了一遍也没有发现是什么原因。后来将生产的xml文件粘贴到notepad 放大后才发现原有得market_price，已经变成了market__price 知道了为什么解析不了的原因。于是在网上搜索找到了一个可行的办法：通过转换过滤来解决这个问题。具体解决方法如下：</p>
+    <content type="html"><![CDATA[<h3 id="闲话"><a href="#闲话" class="headerlink" title="闲话"></a>闲话</h3><p>在前几天的一个项目中，由于数据库字段的命名原因 其中有两项：一项叫做”市场价格”一项叫做”商店价格” 为了便于区分，遂分别将其命名为market_price和shop_price.对应的实体类命名于此相似。可是在后台使用xstream将数据读出转换为对xml对象时，前台使用extjs的ajax请求，所有其他的属性在前台都可以被解析，唯独 此二者不可解析，仔细检查了一遍也没有发现是什么原因。后来将生产的xml文件粘贴到notepad 放大后才发现原有得market_price，已经变成了market__price 知道了为什么解析不了的原因。于是在网上搜索找到了一个可行的办法：通过转换过滤来解决这个问题。具体解决方法如下：</p>
 <pre><code>String xml = &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;utf-8\&quot;?&gt;\n&quot;    + sm.toXML(results);
 xml=xml.replace(&quot;__&quot;, &quot;_&quot;); 
 </code></pre>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;在前几天的一个项目中，由于数据库字段的命名原因 其中有两项：一项叫做”市场价格”一项叫做”商店价格” 为了便于区分，遂分别将其命名为market_price和shop_price.对应的实体类命名于此相似。可是在后台使用xstream将数据读出转换为对xml对象时，前台使用
+      &lt;h3 id=&quot;闲话&quot;&gt;&lt;a href=&quot;#闲话&quot; class=&quot;headerlink&quot; title=&quot;闲话&quot;&gt;&lt;/a&gt;闲话&lt;/h3&gt;&lt;p&gt;在前几天的一个项目中，由于数据库字段的命名原因 其中有两项：一项叫做”市场价格”一项叫做”商店价格” 为了便于区分，遂分别将其命名为mark
     
     </summary>
     

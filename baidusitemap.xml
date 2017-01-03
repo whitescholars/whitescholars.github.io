@@ -3,11 +3,9 @@
 
 
     
-    
-    
   <url>
     <loc>http://penglei.top/2017/01/02/XStream_java/</loc>
-    <lastmod>2017-01-02T12:46:24.966Z</lastmod>
+    <lastmod>2017-01-03T13:51:26.856Z</lastmod>
     <data>
         <display>
         <title>XStream将java对象转换为xml时，对象字段中的下划线"_"，转换后变成了两个的解决办法</title>
@@ -30,6 +28,8 @@
     </data>
     </url>
 
+    
+    
     
     
 </urlset>
