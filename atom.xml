@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://penglei.top/"/>
-  <updated>2017-01-04T14:39:57.582Z</updated>
+  <updated>2017-01-04T14:43:35.311Z</updated>
   <id>http://penglei.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://penglei.top/2017/01/04/elasticSearch-1/"/>
     <id>http://penglei.top/2017/01/04/elasticSearch-1/</id>
     <published>2017-01-04T14:30:36.000Z</published>
-    <updated>2017-01-04T14:39:57.582Z</updated>
+    <updated>2017-01-04T14:43:35.311Z</updated>
     
     <content type="html"><![CDATA[<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>接触ElasticSearch已经有一段了。在这期间，遇到很多问题，但在最后自己的不断探索下解决了这些问题。看到网上或多或少的都有一些介绍ElasticSearch相关知识的文档，但个人觉得都不是很全面。因此就有了写ElasticSearch开发教程的想法，将学习到的技术经验分享出来，帮助更多需要的朋友，也希望借此认识同行的朋友，共同交流，共同进步！</p>
 ]]></content>
