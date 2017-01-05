@@ -6,7 +6,7 @@
     <entry>
       <title><![CDATA[Elasticsearch之java的基本操作一]]></title>
       <url>http://penglei.top/2017/01/04/elasticSearch-1/</url>
-      <content type="html"><![CDATA[<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>接触ElasticSearch已经有一段了。在这期间，遇到很多问题，但在最后自己的不断探索下解决了这些问题。看到网上或多或少的都有一些介绍ElasticSearch相关知识的文档，但个人觉得都不是很全面。因此就有了写ElasticSearch开发教程的想法，将学习到的技术经验分享出来，帮助更多需要的朋友，也希望借此认识同行的朋友，共同交流，共同进步！  </p>
+      <content type="html"><![CDATA[<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>&ensp;&ensp;&ensp;&ensp;接触ElasticSearch已经有一段了。在这期间，遇到很多问题，但在最后自己的不断探索下解决了这些问题。看到网上或多或少的都有一些介绍ElasticSearch相关知识的文档，但个人觉得都不是很全面。因此就有了写ElasticSearch开发教程的想法，将学习到的技术经验分享出来，帮助更多需要的朋友，也希望借此认识同行的朋友，共同交流，共同进步！  </p>
 <hr>
 <h3 id="系列文章的总括"><a href="#系列文章的总括" class="headerlink" title="系列文章的总括"></a>系列文章的总括</h3><p>下面将对即将推出的ElasticSearch开发系列连载教程做简单的说明。教程主要是面向有一定Java编程基础的朋友，不打算从编程语言开始讲起，至于内容方面，大概会涉及到：<br>1.如何快速入手ElasticSearch搜索引擎技术。<br>2.ElasticSearch搜索引擎的安装。<br>3.常用的ElasticSearch查询语法以及示例。<br>4.java 操作es的基本范例。<br>5.代码结构以及开发中需要注意的事项。<br>当然，具体写出来的内容肯定不止这些，但一定会包含以上介绍的所有内容。  </p>
 <h3 id="快速入手方法"><a href="#快速入手方法" class="headerlink" title="快速入手方法"></a>快速入手方法</h3><p>1.首先学习一下有关ElasticSearch的基本知识，简单的增删查找以及分片，并且对比一下ElasticSearch中一些名词与数据库中的一些名词的关系。  这里附上一张简单的对比关系：</p>
@@ -48,7 +48,7 @@
     <entry>
       <title><![CDATA[XStream将java对象转换为xml时，对象字段中的下划线"_"，转换后变成了两个的解决办法]]></title>
       <url>http://penglei.top/2017/01/02/XStream_java/</url>
-      <content type="html"><![CDATA[<h3 id="问题产生原因及解决办法"><a href="#问题产生原因及解决办法" class="headerlink" title="问题产生原因及解决办法"></a>问题产生原因及解决办法</h3><p>在前几天的一个项目中，由于数据库字段的命名原因 其中有两项：一项叫做”市场价格”一项叫做”商店价格” 为了便于区分，遂分别将其命名为market_price和shop_price.对应的实体类命名于此相似。可是在后台使用xstream将数据读出转换为对xml对象时，前台使用extjs的ajax请求，所有其他的属性在前台都可以被解析，唯独 此二者不可解析，仔细检查了一遍也没有发现是什么原因。后来将生产的xml文件粘贴到notepad 放大后才发现原有得market_price，已经变成了market__price 知道了为什么解析不了的原因。于是在网上搜索找到了一个可行的办法：通过转换过滤来解决这个问题。具体解决方法如下：</p>
+      <content type="html"><![CDATA[<h3 id="问题产生原因及解决办法"><a href="#问题产生原因及解决办法" class="headerlink" title="问题产生原因及解决办法"></a>问题产生原因及解决办法</h3><p>&ensp;&ensp;&ensp;&ensp;在前几天的一个项目中，由于数据库字段的命名原因 其中有两项：一项叫做”市场价格”一项叫做”商店价格” 为了便于区分，遂分别将其命名为market_price和shop_price.对应的实体类命名于此相似。可是在后台使用xstream将数据读出转换为对xml对象时，前台使用extjs的ajax请求，所有其他的属性在前台都可以被解析，唯独 此二者不可解析，仔细检查了一遍也没有发现是什么原因。后来将生产的xml文件粘贴到notepad 放大后才发现原有得market_price，已经变成了market__price 知道了为什么解析不了的原因。于是在网上搜索找到了一个可行的办法：通过转换过滤来解决这个问题。具体解决方法如下：</p>
 <pre><code>String xml = &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;utf-8\&quot;?&gt;\n&quot;    + sm.toXML(results);
 xml=xml.replace(&quot;__&quot;, &quot;_&quot;); 
 </code></pre>]]></content>
