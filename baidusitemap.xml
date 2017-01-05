@@ -4,30 +4,8 @@
 
     
   <url>
-    <loc>http://penglei.top/2017/01/04/elasticSearch-1/</loc>
-    <lastmod>2017-01-05T12:12:23.318Z</lastmod>
-    <data>
-        <display>
-        <title>Elasticsearch之java的基本操作一</title>
-        <pubTime>2017-01-04T14:30:36.000Z</pubTime>
-        
-        <tag>ElasticSearch</tag>
-         
-        <tag>Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="ElastciSearch系列" url="http://penglei.top/categories/ElastciSearch%E7%B3%BB%E5%88%97/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>http://penglei.top/2017/01/02/XStream_java/</loc>
-    <lastmod>2017-01-05T12:12:17.959Z</lastmod>
+    <loc>http://penglei.top/2017/01/02/java_xstream_problem/</loc>
+    <lastmod>2017-01-05T12:21:58.329Z</lastmod>
     <data>
         <display>
         <title>XStream将java对象转换为xml时，对象字段中的下划线"_"，转换后变成了两个的解决办法</title>
@@ -52,8 +30,32 @@
 
     
   <url>
-    <loc>http://penglei.top/2017/01/03/java-session/</loc>
-    <lastmod>2017-01-05T12:12:16.265Z</lastmod>
+    <loc>http://penglei.top/2017/01/05/java_jsonobj_exceptio/</loc>
+    <lastmod>2017-01-05T12:21:42.575Z</lastmod>
+    <data>
+        <display>
+        <title>使用JSONObject.fromObject的时候出现“There is a cycle in the hierarchy”异常 的解决办法</title>
+        <pubTime>2017-01-05T12:17:29.000Z</pubTime>
+        
+        <tag>There is a cycle in the hierarchy</tag>
+         
+        <tag>json</tag>
+         
+        <tag>JSONObject.fromObject</tag>
+         
+         
+           
+             
+              <breadCrumb title="Java" url="http://penglei.top/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://penglei.top/2017/01/03/java_session_problem/</loc>
+    <lastmod>2017-01-05T12:21:24.984Z</lastmod>
     <data>
         <display>
         <title>懒加载session 无法打开 no session or session was closed 解决办法（完美解决）</title>
@@ -71,6 +73,28 @@
            
              
               <breadCrumb title="Java" url="http://penglei.top/categories/Java/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>http://penglei.top/2017/01/04/elasticSearch_course_1/</loc>
+    <lastmod>2017-01-05T12:12:23.318Z</lastmod>
+    <data>
+        <display>
+        <title>Elasticsearch之java的基本操作一</title>
+        <pubTime>2017-01-04T14:30:36.000Z</pubTime>
+        
+        <tag>ElasticSearch</tag>
+         
+        <tag>Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="ElastciSearch系列" url="http://penglei.top/categories/ElastciSearch%E7%B3%BB%E5%88%97/"/>
           
         </display>
     </data>
