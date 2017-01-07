@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://penglei.top/"/>
-  <updated>2017-01-07T05:26:05.639Z</updated>
+  <updated>2017-01-07T05:28:45.011Z</updated>
   <id>http://penglei.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://penglei.top/2017/01/07/github-nodejs-hexo-install/"/>
     <id>http://penglei.top/2017/01/07/github-nodejs-hexo-install/</id>
     <published>2017-01-07T03:06:45.000Z</published>
-    <updated>2017-01-07T05:26:05.639Z</updated>
+    <updated>2017-01-07T05:28:45.011Z</updated>
     
     <content type="html"><![CDATA[<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>&ensp;&ensp;GitHub 是一个开源项目的托管网站，相信很多人都听过。在上面有很多高质量的项目代码，我们也可以把自己的项目代码托管到GitHub，与朋友们共享交流。GitHub Pages 是Github为大家提供的一项服务，不仅能为托管的项目建立主页，还可以为我们建立个人博客。下面我就介绍个人博客是如何建立的。<br>在使用GitHub Pages建立个人博客前，我们象征性地了解一下GitHub Pages建立的页面有哪些优点：</p>
 <ul>
