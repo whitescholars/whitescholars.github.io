@@ -4,6 +4,100 @@
   
     
     <entry>
+      <title><![CDATA[Hexo+Github搭建个人博客]]></title>
+      <url>http://penglei.top/2017/01/07/github-nodejs-hexo-install/</url>
+      <content type="html"><![CDATA[<p>摘要<br>&ensp;&ensp;GitHub 是一个开源项目的托管网站，相信很多人都听过。在上面有很多高质量的项目代码，我们也可以把自己的项目代码托管到GitHub，与朋友们共享交流。GitHub Pages 是Github为大家提供的一项服务，不仅能为托管的项目建立主页，还可以为我们建立个人博客。下面我就介绍个人博客是如何建立的。<br>在使用GitHub Pages建立个人博客前，我们象征性地了解一下GitHub Pages建立的页面有哪些优点：</p>
+<ul>
+<li>极简的配置，轻量级系统，无需数据库  </li>
+<li>使用标记语言，如Markdown  </li>
+<li>使用GitHub托管服务，免费300MB空间  </li>
+<li>可以绑定自己的域名  </li>
+<li>新版的GitHub Pages还支持CDN服务，提升访问速度</li>
+</ul>
+<p>总体来说，GitHub Pages搭建的博客使用起来是非常方便的。配置好了之后，只需要使用例如Markdown编写自己的博文，扔到指定的文件夹里即可发布了。完全不需要管理网站相关的事务，例如数据库、安全性等问题。</p>
+<p>开始正题，下面的操作步骤参考自Github Pages的主页，再结合我的实际操作介绍各个步骤，并说一下可能遇到的问题和解决办法。<br>首先说明下面是以Window 10环境为例的。另外我采用的是Git Bash终端来操作，这在任何环境下都是一样的。</p>
+<hr>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>在开始一切之前，你必须已经：</p>
+<ul>
+<li>有一个github账号，没有的话去注册一个；</li>
+<li>安装了<a href="http://pan.baidu.com/s/1kU4FPzD" target="_blank" rel="external">node.js</a>(国内下载比较慢 需要的可以从我<a href="http://pan.baidu.com/s/1kU4FPzD" target="_blank" rel="external">百度云</a>下载)、npm，并了解相关基础知识；</li>
+<li>安装了git for windows（或者其它git客户端）  </li>
+<li><p>本文所使用的环境：</p>
+<pre><code>Windows10
+[node.js@6.2.0](http://pan.baidu.com/s/1kU4FPzD)  
+hexo@3.2.2
+</code></pre></li>
+</ul>
+<hr>
+<h3 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h3><p>下载<a href="http://pan.baidu.com/s/1kU4FPzD" target="_blank" rel="external">node.js</a> 安装文件，点击安装，不用你做任何操作，直接下一步即可安装完成。</p>
+<h3 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h3><p>在电脑的任意一个盘（位置自选）建一个文件夹，比如说的我的文件取名为Hexo.打开此文件夹，按住电脑的<code>shift</code>键，右击鼠标，选择<code>在此处打开命令窗口</code>(或者打开电脑的dos窗口，直接切换目录到Hexo文件夹)</p>
+<p>在命令窗口中输入：</p>
+<pre><code>$ npm install -g hexo-cli  //安装hexo
+</code></pre><p>然后输入命令hexo -v输入hexo的版本号即为安装成功。</p>
+<h3 id="创建一个新仓库"><a href="#创建一个新仓库" class="headerlink" title="创建一个新仓库"></a>创建一个新仓库</h3><p>新建一个名为你的<code>github用户名.github.io</code>的仓库，比如说，如果你的github用户名是whitescholars(这个是我的用户名)，那么你就新建<a href="https://whitescholars.github.io" target="_blank" rel="external">whitescholars.github.io</a>的仓库（必须是你的用户名，其它名称无效），将来你的网站访问地址就是<br><a href="https://whitescholars.github.io" target="_blank" rel="external">https://whitescholars.github.io</a> 了，是不是很方便？</p>
+<p>由此可见，每一个github账户最多只能创建一个这样可以直接使用域名访问的仓库，所以访问的地址也是唯一的，方便github服务器管理。</p>
+<h3 id="设置仓库的参数"><a href="#设置仓库的参数" class="headerlink" title="设置仓库的参数"></a>设置仓库的参数</h3><p>相信大多数人都知道，要想使用git命令来和github进行提交部署等操作，需要进行一些配置，大概就是下面一些命令，如不明白请自行搜索.  </p>
+<ol>
+<li>安装<a href="https://git-for-windows.github.io/" target="_blank" rel="external">git for windows  </a>  </li>
+<li><p>右键鼠标选择<code>git Base here</code>,输入如下命令：  </p>
+<p> git config –global user.email xxx@qq.com<br> git config –global user.name xxx<br> ssh-keygen -t rsa -C xxx@qq.com(邮箱地址)  // 生成ssh<br><strong>注：email和name分别为注册github时的邮箱和用户名，生成ssh时会提示让你选择存储地址，可直接按enter下一步存储为默认地址。</strong></p>
+</li>
+</ol>
+<p>找到.ssh文件夹，找到id_rsa.pub文件打开复制SSH<br><img src="http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148376247778.png" alt=""></p>
+<p>3.登陆github，settings － Deploy keys  － add deploy key（把复制的SSH添加进去即可）</p>
+<p><img src="http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148376288144.png" alt=""></p>
+<p>4.测试是否成功  </p>
+<pre><code>$ ssh -T git@github.com 
+</code></pre><p>提示：</p>
+<pre><code>Hi whitescholars/whitescholars.github.io! You&apos;ve successfully authenticated, but GitHub does not provide shell access.
+</code></pre><p>证明校验成功。</p>
+<h3 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h3><p>进入Hexo文件夹，在Dos命令窗输入：</p>
+<pre><code>$ hexo init
+</code></pre><p>这个过程稍微漫长一点，下载的文件如下图所示：</p>
+<p><img src="http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148376370505.png" alt=""></p>
+<p>接着输入：</p>
+<pre><code>$ hexo g # 生成
+$ hexo s # 启动服务
+</code></pre><p>执行以上命令之后，hexo就会在public文件夹生成相关html文件，这些文件将来都是要提交到github去的：<br><img src="http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148376395967.png" alt=""></p>
+<p><code>hexo s</code>是开启本地预览服务，打开浏览器访问 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 即可看到内容：</p>
+<p><img src="http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148376511338.png" alt=""></p>
+<p>至此一个简单的博客框架算是搭建完成。系统会默认生成一个Hello    World的文章。</p>
+<h3 id="代码上传"><a href="#代码上传" class="headerlink" title="代码上传"></a>代码上传</h3><p>如果你一切都配置好了，发布上传很容易，一句hexo d就搞定，当然关键还是你要把所有东西配置好。<br>首先，ssh key肯定要配置好。<br>其次，配置<code>主配置文件_config.yml</code>中有关deploy的部分：</p>
+<p>正确写法：</p>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: git@github.com:whitescholars/whitescholars.github.io.git
+  branch: master  
+</code></pre><p>repository为对应仓库的地址。注意仓库地址有两种形式。一种是https，一种是SSH。此处应该使用SSH形式的地址。   </p>
+<p>最后输入如下三条命令：</p>
+<pre><code>$ hexo clean # 清理
+$ hexo g  # 生成文件
+$ hexo d  # 部署文件
+</code></pre><p>部署完成后输入自己之前创建的git仓库地址就可以访问了，例如我的仓库名字是<a href="https://whitescholars.github.io" target="_blank" rel="external">whitescholars.github.io</a>,则输入<a href="https://whitescholars.github.io即可访问。" target="_blank" rel="external">https://whitescholars.github.io即可访问。</a></p>
+<p>至此一个你已完成了真个博客的搭建。当然你可能或觉得自己不喜欢这个主题，没关系，我会在后面的博客中接着告诉大家如何安装和修改主题。</p>
+<h3 id="附"><a href="#附" class="headerlink" title="附"></a>附</h3><h4 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h4><pre><code>hexo new &quot;postName&quot; #新建文章
+hexo new page &quot;pageName&quot; #新建页面
+hexo generate #生成静态页面至public目录
+hexo server #开启预览访问端口（默认端口4000，&apos;ctrl + c&apos;关闭server）
+hexo deploy #部署到GitHub
+hexo help  # 查看帮助
+hexo version  #查看Hexo的版本
+</code></pre><h4 id="缩写"><a href="#缩写" class="headerlink" title="缩写"></a>缩写</h4><pre><code>hexo n == hexo new
+hexo g == hexo generate
+hexo s == hexo server
+hexo d == hexo deploy
+</code></pre><h4 id="组合命令"><a href="#组合命令" class="headerlink" title="组合命令"></a>组合命令</h4><pre><code>hexo s -g #生成并本地预览
+hexo d -g #生成并上传
+</code></pre><hr>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
+<p>如果你还需要了解更多技术文章信息，请继续关注<em><a href="HTTP://PENGLEI.TOP">白衣秀才</a></em>的博客</p>
+</blockquote>
+]]></content>
+    </entry>
+    
+    <entry>
       <title><![CDATA[使用JSONObject.fromObject的时候出现“There is a cycle in the hierarchy”异常 的解决办法]]></title>
       <url>http://penglei.top/2017/01/05/java_jsonobj_exceptio/</url>
       <content type="html"><![CDATA[<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>&ensp;&ensp;在使用JSONObject.fromObject的时候，出现“There is a cycle in the hierarchy”异常。意思是出现了死循环，也就是Model之间有循环包含关系.</p>
@@ -18,7 +112,8 @@ JSONObject JsonObject = JSONObject.fromObject(object, jsonConfig);
 import net.sf.json.JSONObject;
 import net.sf.json.JsonConfig;
 import net.sf.json.util.CycleDetectionStrategy
-</code></pre><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
+</code></pre><hr>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
 <p>如果你还需要了解更多技术文章信息，请继续关注<em><a href="HTTP://PENGLEI.TOP">白衣秀才</a></em>的博客</p>
 </blockquote>
 ]]></content>
@@ -38,6 +133,7 @@ import net.sf.json.util.CycleDetectionStrategy
 <p>2.掌握了基本的增删查找后，就是开始搭建ElasticSearch-Java的开发环境，并且利用Java语言，实现对ElasticSeacrh的简单操作。在这个过程中，你慢慢了解ElasticSearch的相关特性。  </p>
 <p>3.掌握了基本的知识后，接下来要做的事情，就是学习ElasticSearch的高级用法，并不断深入。  </p>
 <p>废话不多说 开启我们的ElasticSearch之旅吧！</p>
+<hr>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
 <p>如果你还需要了解更多技术文章信息，请继续关注<em><a href="HTTP://PENGLEI.TOP">白衣秀才</a></em>的博客</p>
 </blockquote>
@@ -63,6 +159,7 @@ import net.sf.json.util.CycleDetectionStrategy
 &lt;url-pattern&gt;*.action&lt;/url-pattern&gt;
 &lt;/filter-mapping&gt;
 </code></pre><p>&ensp;&ensp;&ensp;&ensp;决懒加载的问题，但是对于很多新手来说，有很多疑问，为什么把这段代码粘贴进去了好像还是没有什么用。<br>   &ensp;&ensp;&ensp;&ensp;所以需要注意的是这段代码一定要放在web.xml文件的最开始，如此方可解决问题。  </p>
+<hr>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
 <p>如果你还需要了解更多技术文章信息，请继续关注<em><a href="HTTP://PENGLEI.TOP">白衣秀才</a></em>的博客</p>
 </blockquote>
@@ -75,7 +172,8 @@ import net.sf.json.util.CycleDetectionStrategy
       <content type="html"><![CDATA[<h3 id="问题产生原因及解决办法"><a href="#问题产生原因及解决办法" class="headerlink" title="问题产生原因及解决办法"></a>问题产生原因及解决办法</h3><p>&ensp;&ensp;在前几天的一个项目中，由于数据库字段的命名原因 其中有两项：一项叫做”市场价格”一项叫做”商店价格” 为了便于区分，遂分别将其命名为market_price和shop_price.对应的实体类命名于此相似。可是在后台使用xstream将数据读出转换为对xml对象时，前台使用extjs的ajax请求，所有其他的属性在前台都可以被解析，唯独 此二者不可解析，仔细检查了一遍也没有发现是什么原因。后来将生产的xml文件粘贴到notepad 放大后才发现原有得market_price，已经变成了market__price 知道了为什么解析不了的原因。于是在网上搜索找到了一个可行的办法：通过转换过滤来解决这个问题。具体解决方法如下：</p>
 <pre><code>String xml = &quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;utf-8\&quot;?&gt;\n&quot;    + sm.toXML(results);
 xml=xml.replace(&quot;__&quot;, &quot;_&quot;);  
-</code></pre><h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
+</code></pre><hr>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
 <p>如果你还需要了解更多技术文章信息，请继续关注<em><a href="HTTP://PENGLEI.TOP">白衣秀才</a></em>的博客</p>
 </blockquote>
 ]]></content>

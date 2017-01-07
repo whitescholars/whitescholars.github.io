@@ -92,7 +92,7 @@
 <meta property="og:url" content="http://penglei.top/2017/01/03/java_session_problem/index.html">
 <meta property="og:site_name" content="白衣秀才">
 <meta property="og:description" content="摘要&amp;ensp;&amp;ensp;首先说明一下，hibernate的延迟加载特性(lazy)。所谓的延迟加载就是当真正需要查询数据时才执行数据加载操作。因为hibernate当中支持实体对象，外键会与实体对象关联起来。如果没有这一特性，当查询某一个含有外键的实体对象时，hibernate会把其他实体对象的数据都查询出来。简单的来说，当你想查询某个对象时，实际上调用了多条查询语句。有了延迟加载特性，就避免">
-<meta property="og:updated_time" content="2017-01-05T12:21:24.984Z">
+<meta property="og:updated_time" content="2017-01-07T05:13:30.969Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="懒加载session 无法打开 no session or session was closed 解决办法（完美解决）">
 <meta name="twitter:description" content="摘要&amp;ensp;&amp;ensp;首先说明一下，hibernate的延迟加载特性(lazy)。所谓的延迟加载就是当真正需要查询数据时才执行数据加载操作。因为hibernate当中支持实体对象，外键会与实体对象关联起来。如果没有这一特性，当查询某一个含有外键的实体对象时，hibernate会把其他实体对象的数据都查询出来。简单的来说，当你想查询某个对象时，实际上调用了多条查询语句。有了延迟加载特性，就避免">
@@ -459,6 +459,7 @@
 &lt;url-pattern&gt;*.action&lt;/url-pattern&gt;
 &lt;/filter-mapping&gt;
 </code></pre><p>&ensp;&ensp;&ensp;&ensp;决懒加载的问题，但是对于很多新手来说，有很多疑问，为什么把这段代码粘贴进去了好像还是没有什么用。<br>   &ensp;&ensp;&ensp;&ensp;所以需要注意的是这段代码一定要放在web.xml文件的最开始，如此方可解决问题。  </p>
+<hr>
 <h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
 <p>如果你还需要了解更多技术文章信息，请继续关注<em><a href="HTTP://PENGLEI.TOP">白衣秀才</a></em>的博客</p>
 </blockquote>
@@ -647,7 +648,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -656,7 +657,7 @@
           
             <div class="site-state-item site-state-categories">
               <a href="/categories">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">3</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -665,7 +666,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
