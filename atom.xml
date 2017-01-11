@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://penglei.top/"/>
-  <updated>2017-01-11T14:02:27.163Z</updated>
+  <updated>2017-01-11T14:03:25.791Z</updated>
   <id>http://penglei.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://penglei.top/2017/01/11/hexo_next_baseset/"/>
     <id>http://penglei.top/2017/01/11/hexo_next_baseset/</id>
     <published>2017-01-11T13:49:45.000Z</published>
-    <updated>2017-01-11T14:02:27.163Z</updated>
+    <updated>2017-01-11T14:03:25.791Z</updated>
     
     <content type="html"><![CDATA[<p>该系列博客列表请访问：<a href="http://penglei.top/categories/Github-Hexo建站系列/">http://penglei.top/categories/Github-Hexo建站系列/</a></p>
 <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>或许在你看到我这篇我文章之前，你已经成功的通过Github+Hexo+NextT搭建个人博客这篇文章搭建了自己的博客系统。但是尽管您已经成功建立博客网站，但是你需要对网站做合适的配置和调整才能迎合你的网站要求。本文主要介绍HEXO的基本操作命令和网站的基本配置方法。而在本篇文章中我将着力讲解NextT主题的配置。其他主题的配置与此类似。</p>
@@ -29,28 +29,64 @@
 </code></pre><p>稍等片刻，Next主题下载完成。</p>
 <h3 id="文件内容"><a href="#文件内容" class="headerlink" title="文件内容"></a>文件内容</h3><p>在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为<code>站点配置文件</code>， 后者称为<code>主题配置文件</code>。</p>
 <ul>
-<li>站点配置文件内容<h1 id="Hexo-Configuration"><a href="#Hexo-Configuration" class="headerlink" title="Hexo Configuration"></a>Hexo Configuration</h1><h2 id="Docs-https-hexo-io-docs-configuration-html"><a href="#Docs-https-hexo-io-docs-configuration-html" class="headerlink" title="Docs: https://hexo.io/docs/configuration.html"></a>Docs: <a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">https://hexo.io/docs/configuration.html</a></h2><h2 id="Source-https-github-com-hexojs-hexo"><a href="#Source-https-github-com-hexojs-hexo" class="headerlink" title="Source: https://github.com/hexojs/hexo/"></a>Source: <a href="https://github.com/hexojs/hexo/" target="_blank" rel="external">https://github.com/hexojs/hexo/</a></h2></li>
+<li><p>站点配置文件内容</p>
+<h1 id="Hexo-Configuration"><a href="#Hexo-Configuration" class="headerlink" title="Hexo Configuration"></a>Hexo Configuration</h1><h2 id="Docs-https-hexo-io-docs-configuration-html"><a href="#Docs-https-hexo-io-docs-configuration-html" class="headerlink" title="Docs: https://hexo.io/docs/configuration.html"></a>Docs: <a href="https://hexo.io/docs/configuration.html" target="_blank" rel="external">https://hexo.io/docs/configuration.html</a></h2><h2 id="Source-https-github-com-hexojs-hexo"><a href="#Source-https-github-com-hexojs-hexo" class="headerlink" title="Source: https://github.com/hexojs/hexo/"></a>Source: <a href="https://github.com/hexojs/hexo/" target="_blank" rel="external">https://github.com/hexojs/hexo/</a></h2><h1 id="Site"><a href="#Site" class="headerlink" title="Site"></a>Site</h1><p>  title: 白衣秀才<br>  subtitle: 青春就是疯狂的奔跑，然后华丽的跌倒，站起来，再跑……<br>  description: 青春就是疯狂的奔跑，然后华丽的跌倒，站起来，再跑……<br>  author: 白衣秀才<br>  language: zh-Hans<br>  timezone: Asia/Shanghai</p>
+<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><h2 id="If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘"><a href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘" class="headerlink" title="If your site is put in a subdirectory, set url as ‘http://yoursite.com/child‘ and root as ‘/child/‘"></a>If your site is put in a subdirectory, set url as ‘<a href="http://yoursite.com/child" target="_blank" rel="external">http://yoursite.com/child</a>‘ and root as ‘/child/‘</h2><p>  url: <a href="http://penglei.top">http://penglei.top</a><br>  root: /<br>  permalink: :year/:month/:day/:title/<br>  permalink_defaults:</p>
+<h1 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h1><p>  source_dir: source<br>  public_dir: public<br>  tag_dir: tags<br>  archive_dir: archives<br>  category_dir: categories<br>  code_dir: downloads/code<br>  i18n_dir: :lang<br>  skip_render:</p>
+<h1 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h1><p>  new_post_name: :title.md # File name of new posts<br>  default_layout: post<br>  titlecase: false # Transform title into titlecase<br>  external_link: true # Open external links in new tab<br>  filename_case: 0<br>  render_drafts: false<br>  post_asset_folder: false<br>  relative_link: false<br>  future: true<br>  highlight:</p>
+<pre><code>enable: true
+line_number: true
+auto_detect: false
+tab_replace:
+</code></pre><h1 id="Category-amp-Tag"><a href="#Category-amp-Tag" class="headerlink" title="Category &amp; Tag"></a>Category &amp; Tag</h1><p>  default_category: uncategorized<br>  category_map:<br>  tag_map:</p>
+<h1 id="Date-Time-format"><a href="#Date-Time-format" class="headerlink" title="Date / Time format"></a>Date / Time format</h1><h2 id="Hexo-uses-Moment-js-to-parse-and-display-date"><a href="#Hexo-uses-Moment-js-to-parse-and-display-date" class="headerlink" title="Hexo uses Moment.js to parse and display date"></a>Hexo uses Moment.js to parse and display date</h2><h2 id="You-can-customize-the-date-format-as-defined-in"><a href="#You-can-customize-the-date-format-as-defined-in" class="headerlink" title="You can customize the date format as defined in"></a>You can customize the date format as defined in</h2><h2 id="http-momentjs-com-docs-displaying-format"><a href="#http-momentjs-com-docs-displaying-format" class="headerlink" title="http://momentjs.com/docs/#/displaying/format/"></a><a href="http://momentjs.com/docs/#/displaying/format/" target="_blank" rel="external">http://momentjs.com/docs/#/displaying/format/</a></h2><p>  date_format: YYYY-MM-DD<br>  time_format: HH:mm:ss</p>
+<h1 id="Pagination"><a href="#Pagination" class="headerlink" title="Pagination"></a>Pagination</h1><h2 id="Set-per-page-to-0-to-disable-pagination"><a href="#Set-per-page-to-0-to-disable-pagination" class="headerlink" title="Set per_page to 0 to disable pagination"></a>Set per_page to 0 to disable pagination</h2><p>  per_page: 10<br>  pagination_dir: page</p>
+<h1 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h1><h2 id="Plugins-https-hexo-io-plugins"><a href="#Plugins-https-hexo-io-plugins" class="headerlink" title="Plugins: https://hexo.io/plugins/"></a>Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="external">https://hexo.io/plugins/</a></h2><h2 id="Themes-https-hexo-io-themes"><a href="#Themes-https-hexo-io-themes" class="headerlink" title="Themes: https://hexo.io/themes/"></a>Themes: <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></h2><p>  theme: next</p>
+</li>
 </ul>
-<h1 id="Site"><a href="#Site" class="headerlink" title="Site"></a>Site</h1><p>title: 白衣秀才<br>subtitle: 青春就是疯狂的奔跑，然后华丽的跌倒，站起来，再跑……<br>description: 青春就是疯狂的奔跑，然后华丽的跌倒，站起来，再跑……<br>author: 白衣秀才<br>language: zh-Hans<br>timezone: Asia/Shanghai</p>
-<h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><h2 id="If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘"><a href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘" class="headerlink" title="If your site is put in a subdirectory, set url as ‘http://yoursite.com/child‘ and root as ‘/child/‘"></a>If your site is put in a subdirectory, set url as ‘<a href="http://yoursite.com/child" target="_blank" rel="external">http://yoursite.com/child</a>‘ and root as ‘/child/‘</h2><p>url: <a href="http://penglei.top">http://penglei.top</a><br>root: /<br>permalink: :year/:month/:day/:title/<br>permalink_defaults:</p>
-<h1 id="Directory"><a href="#Directory" class="headerlink" title="Directory"></a>Directory</h1><p>source_dir: source<br>public_dir: public<br>tag_dir: tags<br>archive_dir: archives<br>category_dir: categories<br>code_dir: downloads/code<br>i18n_dir: :lang<br>skip_render:</p>
-<h1 id="Writing"><a href="#Writing" class="headerlink" title="Writing"></a>Writing</h1><p>new_post_name: :title.md # File name of new posts<br>default_layout: post<br>titlecase: false # Transform title into titlecase<br>external_link: true # Open external links in new tab<br>filename_case: 0<br>render_drafts: false<br>post_asset_folder: false<br>relative_link: false<br>future: true<br>highlight:<br>  enable: true<br>  line_number: true<br>  auto_detect: false<br>  tab_replace:</p>
-<h1 id="Category-amp-Tag"><a href="#Category-amp-Tag" class="headerlink" title="Category &amp; Tag"></a>Category &amp; Tag</h1><p>default_category: uncategorized<br>category_map:<br>tag_map:</p>
-<h1 id="Date-Time-format"><a href="#Date-Time-format" class="headerlink" title="Date / Time format"></a>Date / Time format</h1><h2 id="Hexo-uses-Moment-js-to-parse-and-display-date"><a href="#Hexo-uses-Moment-js-to-parse-and-display-date" class="headerlink" title="Hexo uses Moment.js to parse and display date"></a>Hexo uses Moment.js to parse and display date</h2><h2 id="You-can-customize-the-date-format-as-defined-in"><a href="#You-can-customize-the-date-format-as-defined-in" class="headerlink" title="You can customize the date format as defined in"></a>You can customize the date format as defined in</h2><h2 id="http-momentjs-com-docs-displaying-format"><a href="#http-momentjs-com-docs-displaying-format" class="headerlink" title="http://momentjs.com/docs/#/displaying/format/"></a><a href="http://momentjs.com/docs/#/displaying/format/" target="_blank" rel="external">http://momentjs.com/docs/#/displaying/format/</a></h2><p>date_format: YYYY-MM-DD<br>time_format: HH:mm:ss</p>
-<h1 id="Pagination"><a href="#Pagination" class="headerlink" title="Pagination"></a>Pagination</h1><h2 id="Set-per-page-to-0-to-disable-pagination"><a href="#Set-per-page-to-0-to-disable-pagination" class="headerlink" title="Set per_page to 0 to disable pagination"></a>Set per_page to 0 to disable pagination</h2><p>per_page: 10<br>pagination_dir: page</p>
-<h1 id="Extensions"><a href="#Extensions" class="headerlink" title="Extensions"></a>Extensions</h1><h2 id="Plugins-https-hexo-io-plugins"><a href="#Plugins-https-hexo-io-plugins" class="headerlink" title="Plugins: https://hexo.io/plugins/"></a>Plugins: <a href="https://hexo.io/plugins/" target="_blank" rel="external">https://hexo.io/plugins/</a></h2><h2 id="Themes-https-hexo-io-themes"><a href="#Themes-https-hexo-io-themes" class="headerlink" title="Themes: https://hexo.io/themes/"></a>Themes: <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></h2><p>theme: next</p>
-<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-https-hexo-io-docs-deployment-html"><a href="#Docs-https-hexo-io-docs-deployment-html" class="headerlink" title="Docs: https://hexo.io/docs/deployment.html"></a>Docs: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">https://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>  type: git<br>  repository: git@github.com:whitescholars/whitescholars.github.io.git<br>  branch: master</p>
-<p>#首页的分页设置<br>index_generator:<br>  per_page: 5</p>
-<p>############归档页的分页设置<br>archive_generator:<br>  per_page: 30<br>  yearly: true<br>  monthly: true</p>
-<p>#标签页的分页设置<br>tag_generator:<br>  per_page: 20     </p>
-<h1 id="自定义站点内容搜索"><a href="#自定义站点内容搜索" class="headerlink" title="自定义站点内容搜索"></a>自定义站点内容搜索</h1><h1 id="需要先安装插件："><a href="#需要先安装插件：" class="headerlink" title="需要先安装插件："></a>需要先安装插件：</h1><h1 id="npm-install-hexo-generator-search-–save"><a href="#npm-install-hexo-generator-search-–save" class="headerlink" title="npm install hexo-generator-search –save"></a>npm install hexo-generator-search –save</h1><p>search:<br>  path: search.xml</p>
-<h1 id="如只想索引文章，可设置为post"><a href="#如只想索引文章，可设置为post" class="headerlink" title="如只想索引文章，可设置为post"></a>如只想索引文章，可设置为post</h1><p>  field: post</p>
-<p>  #RSS订阅<br>plugin:</p>
-<ul>
-<li>hexo-generator-feed<br>#Feed Atom<br>feed:<br>type: atom<br>path: atom.xml<br>limit: 20</li>
-</ul>
-<p>#打赏<br>reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！<br>wechatpay: <a href="http://cgcyg.img48.wal8.com/img48/564414_20170102112604/14833637422.png" target="_blank" rel="external">http://cgcyg.img48.wal8.com/img48/564414_20170102112604/14833637422.png</a><br>alipay: <a href="http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148336403046.png" target="_blank" rel="external">http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148336403046.png</a></p>
-<ul>
+<pre><code># Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: git@github.com:whitescholars/whitescholars.github.io.git
+  branch: master
+
+
+#首页的分页设置
+index_generator:
+  per_page: 5
+#归档页的分页设置
+archive_generator:
+  per_page: 30
+  yearly: true
+  monthly: true
+#标签页的分页设置
+tag_generator:
+  per_page: 20 
+
+
+# 自定义站点内容搜索
+# 需要先安装插件：
+# npm install hexo-generator-search --save
+search:
+  path: search.xml
+  # 如只想索引文章，可设置为post
+  field: post
+
+  #RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
+
+#打赏
+reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+wechatpay: http://cgcyg.img48.wal8.com/img48/564414_20170102112604/14833637422.png
+alipay: http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148336403046.png
+</code></pre><ul>
 <li>主题配置文件内容</li>
 </ul>
 <h1 id="—————————————————————"><a href="#—————————————————————" class="headerlink" title="—————————————————————"></a>—————————————————————</h1><h1 id="Site-Information-Settings"><a href="#Site-Information-Settings" class="headerlink" title="Site Information Settings"></a>Site Information Settings</h1><h1 id="—————————————————————-1"><a href="#—————————————————————-1" class="headerlink" title="—————————————————————"></a>—————————————————————</h1><h1 id="Put-your-favicon-ico-into-hexo-site-source-directory"><a href="#Put-your-favicon-ico-into-hexo-site-source-directory" class="headerlink" title="Put your favicon.ico into hexo-site/source/ directory."></a>Put your favicon.ico into <code>hexo-site/source/</code> directory.</h1><p>favicon: <a href="http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148332830202.png" target="_blank" rel="external">http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148332830202.png</a></p>
@@ -220,28 +256,64 @@ family: Lato
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;稍等片刻，Next主题下载完成。&lt;/p&gt;
 &lt;h3 id=&quot;文件内容&quot;&gt;&lt;a href=&quot;#文件内容&quot; class=&quot;headerlink&quot; title=&quot;文件内容&quot;&gt;&lt;/a&gt;文件内容&lt;/h3&gt;&lt;p&gt;在 Hexo 中有两份主要的配置文件，其名称都是 _config.yml。 其中，一份位于站点根目录下，主要包含 Hexo 本身的配置；另一份位于主题目录下，这份配置由主题作者提供，主要用于配置主题相关的选项。为了描述方便，在以下说明中，将前者称为&lt;code&gt;站点配置文件&lt;/code&gt;， 后者称为&lt;code&gt;主题配置文件&lt;/code&gt;。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;站点配置文件内容&lt;h1 id=&quot;Hexo-Configuration&quot;&gt;&lt;a href=&quot;#Hexo-Configuration&quot; class=&quot;headerlink&quot; title=&quot;Hexo Configuration&quot;&gt;&lt;/a&gt;Hexo Configuration&lt;/h1&gt;&lt;h2 id=&quot;Docs-https-hexo-io-docs-configuration-html&quot;&gt;&lt;a href=&quot;#Docs-https-hexo-io-docs-configuration-html&quot; class=&quot;headerlink&quot; title=&quot;Docs: https://hexo.io/docs/configuration.html&quot;&gt;&lt;/a&gt;Docs: &lt;a href=&quot;https://hexo.io/docs/configuration.html&quot;&gt;https://hexo.io/docs/configuration.html&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;Source-https-github-com-hexojs-hexo&quot;&gt;&lt;a href=&quot;#Source-https-github-com-hexojs-hexo&quot; class=&quot;headerlink&quot; title=&quot;Source: https://github.com/hexojs/hexo/&quot;&gt;&lt;/a&gt;Source: &lt;a href=&quot;https://github.com/hexojs/hexo/&quot;&gt;https://github.com/hexojs/hexo/&lt;/a&gt;&lt;/h2&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;站点配置文件内容&lt;/p&gt;
+&lt;h1 id=&quot;Hexo-Configuration&quot;&gt;&lt;a href=&quot;#Hexo-Configuration&quot; class=&quot;headerlink&quot; title=&quot;Hexo Configuration&quot;&gt;&lt;/a&gt;Hexo Configuration&lt;/h1&gt;&lt;h2 id=&quot;Docs-https-hexo-io-docs-configuration-html&quot;&gt;&lt;a href=&quot;#Docs-https-hexo-io-docs-configuration-html&quot; class=&quot;headerlink&quot; title=&quot;Docs: https://hexo.io/docs/configuration.html&quot;&gt;&lt;/a&gt;Docs: &lt;a href=&quot;https://hexo.io/docs/configuration.html&quot;&gt;https://hexo.io/docs/configuration.html&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;Source-https-github-com-hexojs-hexo&quot;&gt;&lt;a href=&quot;#Source-https-github-com-hexojs-hexo&quot; class=&quot;headerlink&quot; title=&quot;Source: https://github.com/hexojs/hexo/&quot;&gt;&lt;/a&gt;Source: &lt;a href=&quot;https://github.com/hexojs/hexo/&quot;&gt;https://github.com/hexojs/hexo/&lt;/a&gt;&lt;/h2&gt;&lt;h1 id=&quot;Site&quot;&gt;&lt;a href=&quot;#Site&quot; class=&quot;headerlink&quot; title=&quot;Site&quot;&gt;&lt;/a&gt;Site&lt;/h1&gt;&lt;p&gt;  title: 白衣秀才&lt;br&gt;  subtitle: 青春就是疯狂的奔跑，然后华丽的跌倒，站起来，再跑……&lt;br&gt;  description: 青春就是疯狂的奔跑，然后华丽的跌倒，站起来，再跑……&lt;br&gt;  author: 白衣秀才&lt;br&gt;  language: zh-Hans&lt;br&gt;  timezone: Asia/Shanghai&lt;/p&gt;
+&lt;h1 id=&quot;URL&quot;&gt;&lt;a href=&quot;#URL&quot; class=&quot;headerlink&quot; title=&quot;URL&quot;&gt;&lt;/a&gt;URL&lt;/h1&gt;&lt;h2 id=&quot;If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘&quot;&gt;&lt;a href=&quot;#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘&quot; class=&quot;headerlink&quot; title=&quot;If your site is put in a subdirectory, set url as ‘http://yoursite.com/child‘ and root as ‘/child/‘&quot;&gt;&lt;/a&gt;If your site is put in a subdirectory, set url as ‘&lt;a href=&quot;http://yoursite.com/child&quot;&gt;http://yoursite.com/child&lt;/a&gt;‘ and root as ‘/child/‘&lt;/h2&gt;&lt;p&gt;  url: &lt;a href=&quot;http://penglei.top&quot;&gt;http://penglei.top&lt;/a&gt;&lt;br&gt;  root: /&lt;br&gt;  permalink: :year/:month/:day/:title/&lt;br&gt;  permalink_defaults:&lt;/p&gt;
+&lt;h1 id=&quot;Directory&quot;&gt;&lt;a href=&quot;#Directory&quot; class=&quot;headerlink&quot; title=&quot;Directory&quot;&gt;&lt;/a&gt;Directory&lt;/h1&gt;&lt;p&gt;  source_dir: source&lt;br&gt;  public_dir: public&lt;br&gt;  tag_dir: tags&lt;br&gt;  archive_dir: archives&lt;br&gt;  category_dir: categories&lt;br&gt;  code_dir: downloads/code&lt;br&gt;  i18n_dir: :lang&lt;br&gt;  skip_render:&lt;/p&gt;
+&lt;h1 id=&quot;Writing&quot;&gt;&lt;a href=&quot;#Writing&quot; class=&quot;headerlink&quot; title=&quot;Writing&quot;&gt;&lt;/a&gt;Writing&lt;/h1&gt;&lt;p&gt;  new_post_name: :title.md # File name of new posts&lt;br&gt;  default_layout: post&lt;br&gt;  titlecase: false # Transform title into titlecase&lt;br&gt;  external_link: true # Open external links in new tab&lt;br&gt;  filename_case: 0&lt;br&gt;  render_drafts: false&lt;br&gt;  post_asset_folder: false&lt;br&gt;  relative_link: false&lt;br&gt;  future: true&lt;br&gt;  highlight:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;enable: true
+line_number: true
+auto_detect: false
+tab_replace:
+&lt;/code&gt;&lt;/pre&gt;&lt;h1 id=&quot;Category-amp-Tag&quot;&gt;&lt;a href=&quot;#Category-amp-Tag&quot; class=&quot;headerlink&quot; title=&quot;Category &amp;amp; Tag&quot;&gt;&lt;/a&gt;Category &amp;amp; Tag&lt;/h1&gt;&lt;p&gt;  default_category: uncategorized&lt;br&gt;  category_map:&lt;br&gt;  tag_map:&lt;/p&gt;
+&lt;h1 id=&quot;Date-Time-format&quot;&gt;&lt;a href=&quot;#Date-Time-format&quot; class=&quot;headerlink&quot; title=&quot;Date / Time format&quot;&gt;&lt;/a&gt;Date / Time format&lt;/h1&gt;&lt;h2 id=&quot;Hexo-uses-Moment-js-to-parse-and-display-date&quot;&gt;&lt;a href=&quot;#Hexo-uses-Moment-js-to-parse-and-display-date&quot; class=&quot;headerlink&quot; title=&quot;Hexo uses Moment.js to parse and display date&quot;&gt;&lt;/a&gt;Hexo uses Moment.js to parse and display date&lt;/h2&gt;&lt;h2 id=&quot;You-can-customize-the-date-format-as-defined-in&quot;&gt;&lt;a href=&quot;#You-can-customize-the-date-format-as-defined-in&quot; class=&quot;headerlink&quot; title=&quot;You can customize the date format as defined in&quot;&gt;&lt;/a&gt;You can customize the date format as defined in&lt;/h2&gt;&lt;h2 id=&quot;http-momentjs-com-docs-displaying-format&quot;&gt;&lt;a href=&quot;#http-momentjs-com-docs-displaying-format&quot; class=&quot;headerlink&quot; title=&quot;http://momentjs.com/docs/#/displaying/format/&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://momentjs.com/docs/#/displaying/format/&quot;&gt;http://momentjs.com/docs/#/displaying/format/&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;  date_format: YYYY-MM-DD&lt;br&gt;  time_format: HH:mm:ss&lt;/p&gt;
+&lt;h1 id=&quot;Pagination&quot;&gt;&lt;a href=&quot;#Pagination&quot; class=&quot;headerlink&quot; title=&quot;Pagination&quot;&gt;&lt;/a&gt;Pagination&lt;/h1&gt;&lt;h2 id=&quot;Set-per-page-to-0-to-disable-pagination&quot;&gt;&lt;a href=&quot;#Set-per-page-to-0-to-disable-pagination&quot; class=&quot;headerlink&quot; title=&quot;Set per_page to 0 to disable pagination&quot;&gt;&lt;/a&gt;Set per_page to 0 to disable pagination&lt;/h2&gt;&lt;p&gt;  per_page: 10&lt;br&gt;  pagination_dir: page&lt;/p&gt;
+&lt;h1 id=&quot;Extensions&quot;&gt;&lt;a href=&quot;#Extensions&quot; class=&quot;headerlink&quot; title=&quot;Extensions&quot;&gt;&lt;/a&gt;Extensions&lt;/h1&gt;&lt;h2 id=&quot;Plugins-https-hexo-io-plugins&quot;&gt;&lt;a href=&quot;#Plugins-https-hexo-io-plugins&quot; class=&quot;headerlink&quot; title=&quot;Plugins: https://hexo.io/plugins/&quot;&gt;&lt;/a&gt;Plugins: &lt;a href=&quot;https://hexo.io/plugins/&quot;&gt;https://hexo.io/plugins/&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;Themes-https-hexo-io-themes&quot;&gt;&lt;a href=&quot;#Themes-https-hexo-io-themes&quot; class=&quot;headerlink&quot; title=&quot;Themes: https://hexo.io/themes/&quot;&gt;&lt;/a&gt;Themes: &lt;a href=&quot;https://hexo.io/themes/&quot;&gt;https://hexo.io/themes/&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;  theme: next&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h1 id=&quot;Site&quot;&gt;&lt;a href=&quot;#Site&quot; class=&quot;headerlink&quot; title=&quot;Site&quot;&gt;&lt;/a&gt;Site&lt;/h1&gt;&lt;p&gt;title: 白衣秀才&lt;br&gt;subtitle: 青春就是疯狂的奔跑，然后华丽的跌倒，站起来，再跑……&lt;br&gt;description: 青春就是疯狂的奔跑，然后华丽的跌倒，站起来，再跑……&lt;br&gt;author: 白衣秀才&lt;br&gt;language: zh-Hans&lt;br&gt;timezone: Asia/Shanghai&lt;/p&gt;
-&lt;h1 id=&quot;URL&quot;&gt;&lt;a href=&quot;#URL&quot; class=&quot;headerlink&quot; title=&quot;URL&quot;&gt;&lt;/a&gt;URL&lt;/h1&gt;&lt;h2 id=&quot;If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘&quot;&gt;&lt;a href=&quot;#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child‘-and-root-as-‘-child-‘&quot; class=&quot;headerlink&quot; title=&quot;If your site is put in a subdirectory, set url as ‘http://yoursite.com/child‘ and root as ‘/child/‘&quot;&gt;&lt;/a&gt;If your site is put in a subdirectory, set url as ‘&lt;a href=&quot;http://yoursite.com/child&quot;&gt;http://yoursite.com/child&lt;/a&gt;‘ and root as ‘/child/‘&lt;/h2&gt;&lt;p&gt;url: &lt;a href=&quot;http://penglei.top&quot;&gt;http://penglei.top&lt;/a&gt;&lt;br&gt;root: /&lt;br&gt;permalink: :year/:month/:day/:title/&lt;br&gt;permalink_defaults:&lt;/p&gt;
-&lt;h1 id=&quot;Directory&quot;&gt;&lt;a href=&quot;#Directory&quot; class=&quot;headerlink&quot; title=&quot;Directory&quot;&gt;&lt;/a&gt;Directory&lt;/h1&gt;&lt;p&gt;source_dir: source&lt;br&gt;public_dir: public&lt;br&gt;tag_dir: tags&lt;br&gt;archive_dir: archives&lt;br&gt;category_dir: categories&lt;br&gt;code_dir: downloads/code&lt;br&gt;i18n_dir: :lang&lt;br&gt;skip_render:&lt;/p&gt;
-&lt;h1 id=&quot;Writing&quot;&gt;&lt;a href=&quot;#Writing&quot; class=&quot;headerlink&quot; title=&quot;Writing&quot;&gt;&lt;/a&gt;Writing&lt;/h1&gt;&lt;p&gt;new_post_name: :title.md # File name of new posts&lt;br&gt;default_layout: post&lt;br&gt;titlecase: false # Transform title into titlecase&lt;br&gt;external_link: true # Open external links in new tab&lt;br&gt;filename_case: 0&lt;br&gt;render_drafts: false&lt;br&gt;post_asset_folder: false&lt;br&gt;relative_link: false&lt;br&gt;future: true&lt;br&gt;highlight:&lt;br&gt;  enable: true&lt;br&gt;  line_number: true&lt;br&gt;  auto_detect: false&lt;br&gt;  tab_replace:&lt;/p&gt;
-&lt;h1 id=&quot;Category-amp-Tag&quot;&gt;&lt;a href=&quot;#Category-amp-Tag&quot; class=&quot;headerlink&quot; title=&quot;Category &amp;amp; Tag&quot;&gt;&lt;/a&gt;Category &amp;amp; Tag&lt;/h1&gt;&lt;p&gt;default_category: uncategorized&lt;br&gt;category_map:&lt;br&gt;tag_map:&lt;/p&gt;
-&lt;h1 id=&quot;Date-Time-format&quot;&gt;&lt;a href=&quot;#Date-Time-format&quot; class=&quot;headerlink&quot; title=&quot;Date / Time format&quot;&gt;&lt;/a&gt;Date / Time format&lt;/h1&gt;&lt;h2 id=&quot;Hexo-uses-Moment-js-to-parse-and-display-date&quot;&gt;&lt;a href=&quot;#Hexo-uses-Moment-js-to-parse-and-display-date&quot; class=&quot;headerlink&quot; title=&quot;Hexo uses Moment.js to parse and display date&quot;&gt;&lt;/a&gt;Hexo uses Moment.js to parse and display date&lt;/h2&gt;&lt;h2 id=&quot;You-can-customize-the-date-format-as-defined-in&quot;&gt;&lt;a href=&quot;#You-can-customize-the-date-format-as-defined-in&quot; class=&quot;headerlink&quot; title=&quot;You can customize the date format as defined in&quot;&gt;&lt;/a&gt;You can customize the date format as defined in&lt;/h2&gt;&lt;h2 id=&quot;http-momentjs-com-docs-displaying-format&quot;&gt;&lt;a href=&quot;#http-momentjs-com-docs-displaying-format&quot; class=&quot;headerlink&quot; title=&quot;http://momentjs.com/docs/#/displaying/format/&quot;&gt;&lt;/a&gt;&lt;a href=&quot;http://momentjs.com/docs/#/displaying/format/&quot;&gt;http://momentjs.com/docs/#/displaying/format/&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;date_format: YYYY-MM-DD&lt;br&gt;time_format: HH:mm:ss&lt;/p&gt;
-&lt;h1 id=&quot;Pagination&quot;&gt;&lt;a href=&quot;#Pagination&quot; class=&quot;headerlink&quot; title=&quot;Pagination&quot;&gt;&lt;/a&gt;Pagination&lt;/h1&gt;&lt;h2 id=&quot;Set-per-page-to-0-to-disable-pagination&quot;&gt;&lt;a href=&quot;#Set-per-page-to-0-to-disable-pagination&quot; class=&quot;headerlink&quot; title=&quot;Set per_page to 0 to disable pagination&quot;&gt;&lt;/a&gt;Set per_page to 0 to disable pagination&lt;/h2&gt;&lt;p&gt;per_page: 10&lt;br&gt;pagination_dir: page&lt;/p&gt;
-&lt;h1 id=&quot;Extensions&quot;&gt;&lt;a href=&quot;#Extensions&quot; class=&quot;headerlink&quot; title=&quot;Extensions&quot;&gt;&lt;/a&gt;Extensions&lt;/h1&gt;&lt;h2 id=&quot;Plugins-https-hexo-io-plugins&quot;&gt;&lt;a href=&quot;#Plugins-https-hexo-io-plugins&quot; class=&quot;headerlink&quot; title=&quot;Plugins: https://hexo.io/plugins/&quot;&gt;&lt;/a&gt;Plugins: &lt;a href=&quot;https://hexo.io/plugins/&quot;&gt;https://hexo.io/plugins/&lt;/a&gt;&lt;/h2&gt;&lt;h2 id=&quot;Themes-https-hexo-io-themes&quot;&gt;&lt;a href=&quot;#Themes-https-hexo-io-themes&quot; class=&quot;headerlink&quot; title=&quot;Themes: https://hexo.io/themes/&quot;&gt;&lt;/a&gt;Themes: &lt;a href=&quot;https://hexo.io/themes/&quot;&gt;https://hexo.io/themes/&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;theme: next&lt;/p&gt;
-&lt;h1 id=&quot;Deployment&quot;&gt;&lt;a href=&quot;#Deployment&quot; class=&quot;headerlink&quot; title=&quot;Deployment&quot;&gt;&lt;/a&gt;Deployment&lt;/h1&gt;&lt;h2 id=&quot;Docs-https-hexo-io-docs-deployment-html&quot;&gt;&lt;a href=&quot;#Docs-https-hexo-io-docs-deployment-html&quot; class=&quot;headerlink&quot; title=&quot;Docs: https://hexo.io/docs/deployment.html&quot;&gt;&lt;/a&gt;Docs: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot;&gt;https://hexo.io/docs/deployment.html&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;deploy:&lt;br&gt;  type: git&lt;br&gt;  repository: git@github.com:whitescholars/whitescholars.github.io.git&lt;br&gt;  branch: master&lt;/p&gt;
-&lt;p&gt;#首页的分页设置&lt;br&gt;index_generator:&lt;br&gt;  per_page: 5&lt;/p&gt;
-&lt;p&gt;############归档页的分页设置&lt;br&gt;archive_generator:&lt;br&gt;  per_page: 30&lt;br&gt;  yearly: true&lt;br&gt;  monthly: true&lt;/p&gt;
-&lt;p&gt;#标签页的分页设置&lt;br&gt;tag_generator:&lt;br&gt;  per_page: 20     &lt;/p&gt;
-&lt;h1 id=&quot;自定义站点内容搜索&quot;&gt;&lt;a href=&quot;#自定义站点内容搜索&quot; class=&quot;headerlink&quot; title=&quot;自定义站点内容搜索&quot;&gt;&lt;/a&gt;自定义站点内容搜索&lt;/h1&gt;&lt;h1 id=&quot;需要先安装插件：&quot;&gt;&lt;a href=&quot;#需要先安装插件：&quot; class=&quot;headerlink&quot; title=&quot;需要先安装插件：&quot;&gt;&lt;/a&gt;需要先安装插件：&lt;/h1&gt;&lt;h1 id=&quot;npm-install-hexo-generator-search-–save&quot;&gt;&lt;a href=&quot;#npm-install-hexo-generator-search-–save&quot; class=&quot;headerlink&quot; title=&quot;npm install hexo-generator-search –save&quot;&gt;&lt;/a&gt;npm install hexo-generator-search –save&lt;/h1&gt;&lt;p&gt;search:&lt;br&gt;  path: search.xml&lt;/p&gt;
-&lt;h1 id=&quot;如只想索引文章，可设置为post&quot;&gt;&lt;a href=&quot;#如只想索引文章，可设置为post&quot; class=&quot;headerlink&quot; title=&quot;如只想索引文章，可设置为post&quot;&gt;&lt;/a&gt;如只想索引文章，可设置为post&lt;/h1&gt;&lt;p&gt;  field: post&lt;/p&gt;
-&lt;p&gt;  #RSS订阅&lt;br&gt;plugin:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;hexo-generator-feed&lt;br&gt;#Feed Atom&lt;br&gt;feed:&lt;br&gt;type: atom&lt;br&gt;path: atom.xml&lt;br&gt;limit: 20&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;#打赏&lt;br&gt;reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！&lt;br&gt;wechatpay: &lt;a href=&quot;http://cgcyg.img48.wal8.com/img48/564414_20170102112604/14833637422.png&quot;&gt;http://cgcyg.img48.wal8.com/img48/564414_20170102112604/14833637422.png&lt;/a&gt;&lt;br&gt;alipay: &lt;a href=&quot;http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148336403046.png&quot;&gt;http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148336403046.png&lt;/a&gt;&lt;/p&gt;
-&lt;ul&gt;
+&lt;pre&gt;&lt;code&gt;# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+  repository: git@github.com:whitescholars/whitescholars.github.io.git
+  branch: master
+
+
+#首页的分页设置
+index_generator:
+  per_page: 5
+#归档页的分页设置
+archive_generator:
+  per_page: 30
+  yearly: true
+  monthly: true
+#标签页的分页设置
+tag_generator:
+  per_page: 20 
+
+
+# 自定义站点内容搜索
+# 需要先安装插件：
+# npm install hexo-generator-search --save
+search:
+  path: search.xml
+  # 如只想索引文章，可设置为post
+  field: post
+
+  #RSS订阅
+plugin:
+- hexo-generator-feed
+#Feed Atom
+feed:
+type: atom
+path: atom.xml
+limit: 20
+
+#打赏
+reward_comment: 坚持原创技术分享，您的支持将鼓励我继续创作！
+wechatpay: http://cgcyg.img48.wal8.com/img48/564414_20170102112604/14833637422.png
+alipay: http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148336403046.png
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
 &lt;li&gt;主题配置文件内容&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h1 id=&quot;—————————————————————&quot;&gt;&lt;a href=&quot;#—————————————————————&quot; class=&quot;headerlink&quot; title=&quot;—————————————————————&quot;&gt;&lt;/a&gt;—————————————————————&lt;/h1&gt;&lt;h1 id=&quot;Site-Information-Settings&quot;&gt;&lt;a href=&quot;#Site-Information-Settings&quot; class=&quot;headerlink&quot; title=&quot;Site Information Settings&quot;&gt;&lt;/a&gt;Site Information Settings&lt;/h1&gt;&lt;h1 id=&quot;—————————————————————-1&quot;&gt;&lt;a href=&quot;#—————————————————————-1&quot; class=&quot;headerlink&quot; title=&quot;—————————————————————&quot;&gt;&lt;/a&gt;—————————————————————&lt;/h1&gt;&lt;h1 id=&quot;Put-your-favicon-ico-into-hexo-site-source-directory&quot;&gt;&lt;a href=&quot;#Put-your-favicon-ico-into-hexo-site-source-directory&quot; class=&quot;headerlink&quot; title=&quot;Put your favicon.ico into hexo-site/source/ directory.&quot;&gt;&lt;/a&gt;Put your favicon.ico into &lt;code&gt;hexo-site/source/&lt;/code&gt; directory.&lt;/h1&gt;&lt;p&gt;favicon: &lt;a href=&quot;http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148332830202.png&quot;&gt;http://cgcyg.img48.wal8.com/img48/564414_20170102112604/148332830202.png&lt;/a&gt;&lt;/p&gt;
