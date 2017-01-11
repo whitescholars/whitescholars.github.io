@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://penglei.top/"/>
-  <updated>2017-01-07T05:28:45.011Z</updated>
+  <updated>2017-01-11T13:41:04.968Z</updated>
   <id>http://penglei.top/</id>
   
   <author>
@@ -14,6 +14,60 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo站点之域名配置</title>
+    <link href="http://penglei.top/2017/01/11/github-nodejs-hexo-domain-name/"/>
+    <id>http://penglei.top/2017/01/11/github-nodejs-hexo-domain-name/</id>
+    <published>2017-01-11T13:25:45.000Z</published>
+    <updated>2017-01-11T13:41:04.968Z</updated>
+    
+    <content type="html"><![CDATA[<p>该系列博客列表请访问：<a href="http://penglei.top/categories/Github-Hexo建站系列/">http://penglei.top/categories/Github-Hexo建站系列/</a></p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>因为Hexo个人博客是托管在github之上，每次访问都要使用githubname.github.io这么一个长串的域名来访问，会显得非常繁琐。这个时候我们可以购买一个域名，设置DNS跳转，以达到通过域名即可访问我们的个人博客。通过查阅文档发现，github pages是支持域名绑定的。</p>
+<h3 id="购买域名"><a href="#购买域名" class="headerlink" title="购买域名"></a>购买域名</h3><p>国内国外有很多的域名供应商，选择一个好的机构购买域名，会为自己的站点配置节约很多时间，也不会因为域名的出错，导致影响百度对我们个人博客的收录。近几年来，国内做的比较好的域名供应商有阿里的万网。我就是在阿里的万网购买的域名。通过查找，找到自己喜欢的域名，后来为了解决成本，我选了.top结尾的域名，一年只需要4块钱，很便宜，建议如果只是作为自己的博客使用建议不要购买.com的域名。(注意：购买.top域名之后，大概6个小时之内就会生效，5之内必须对域名进行认证，超过5天没有认证域名将会被锁定。)</p>
+<h3 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h3><ul>
+<li><p>登录进入万网的域名控制台，点击”域名和网站”中的”云DNS”<br><img src="http://images2015.cnblogs.com/blog/898529/201701/898529-20170111145433135-704685146.png" alt=""></p>
+</li>
+<li><p>点击对应域名的”解析”<br><img src="http://images2015.cnblogs.com/blog/898529/201701/898529-20170111155446931-105689503.png" alt=""></p>
+</li>
+<li><p>点击添加解析，记录类型选A或CNAME，A记录的记录值就是ip地址，github(官方文档)提供了两个IP地址，192.30.252.153和192.30.252.154，这两个IP地址为github的服务器地址，两个都要填上，解析记录设置两个www和@，线路就默认就行了，CNAME记录值填你的github博客网址。如我的是<a href="http://penglei.top">whitescholars.github.io</a>。<br><img src="http://images2015.cnblogs.com/blog/898529/201701/898529-20170111155934166-1006871703.png" alt=""></p>
+</li>
+</ul>
+<p>这些全部设置完成后，此时你并不能要申请的域名访问你的博客。接着你需要做的是在<code>HEXO根目录的SOURCE文件夹里创建CNAME文件</code>，不带任何后缀，里面添加你的域名信息，如：penglei.com。实践证明如果此时你填写的是www.penglei.top那么以后你只能用www.penglei.top访问，而如果你填写的是penglei.top。那么用www.penglei.top和penglei.top访问都是可以的。重新清理hexo,并发布即可用新的域名访问。  </p>
+<h3 id="搭建完成访问出现404-可能的原因是："><a href="#搭建完成访问出现404-可能的原因是：" class="headerlink" title="搭建完成访问出现404 可能的原因是："></a>搭建完成访问出现404 可能的原因是：</h3><ol>
+<li>绑定了个人域名，但是域名解析错误。</li>
+<li>域名解析正确但你的域名是通过国内注册商注册的，你的域名因没有实名制而无法访问。</li>
+<li>你认为配置没有问题，那么可能只是你的浏览器在捣鬼，可尝试清除浏览器缓存再访问或者换个浏览器访问。</li>
+<li>也有可能是你的路由器缓存导致的错觉，所以也可以尝试换个局域网访问你的网站。</li>
+<li>最有可能的原因是你下载的hexo有问题，导致所有的东西都上传到了github,而导致index页面在主域名的下一级目录。你可以尝试查看上传的内容，找到index页面，在域名后面添加下一级目录。若能访问index页面（此时样式可能是乱的），则证明是hexo安装有问题，笔者当时遇到的就是这个问题。可卸载重新安装。  <blockquote>
+<pre><code>注：1，2默认你的CNAME文件配置没有问题，如果没有绑定个人域名，则不需要CNAME文件。
+</code></pre></blockquote>
+</li>
+</ol>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><blockquote>
+<p>如果你还需要了解更多技术文章信息，请继续关注<em><a href="HTTP://PENGLEI.TOP">白衣秀才</a></em>的博客<br>文章转自我的博客园：<a href="http://www.cnblogs.com/penglei-it/p/hexo_domain_name.html" target="_blank" rel="external">http://www.cnblogs.com/penglei-it/p/hexo_domain_name.html</a></p>
+</blockquote>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;该系列博客列表请访问：&lt;a href=&quot;http://penglei.top/categories/Github-Hexo建站系列/&quot;&gt;http://penglei.top/categories/Github-Hexo建站系列/&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;摘要&quot;&gt;&lt;a
+    
+    </summary>
+    
+      <category term="Github+Hexo建站系列" scheme="http://penglei.top/categories/Github-Hexo%E5%BB%BA%E7%AB%99%E7%B3%BB%E5%88%97/"/>
+    
+    
+      <category term="Github" scheme="http://penglei.top/tags/Github/"/>
+    
+      <category term="Hexo" scheme="http://penglei.top/tags/Hexo/"/>
+    
+      <category term="域名" scheme="http://penglei.top/tags/%E5%9F%9F%E5%90%8D/"/>
+    
+      <category term="NextT" scheme="http://penglei.top/tags/NextT/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo+Github搭建个人博客</title>
@@ -124,9 +178,9 @@ hexo d -g #生成并上传
     
       <category term="Hexo" scheme="http://penglei.top/tags/Hexo/"/>
     
-      <category term="Node.js" scheme="http://penglei.top/tags/Node-js/"/>
-    
       <category term="NextT" scheme="http://penglei.top/tags/NextT/"/>
+    
+      <category term="Node.js" scheme="http://penglei.top/tags/Node-js/"/>
     
   </entry>
   

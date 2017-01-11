@@ -4,6 +4,32 @@
 
     
   <url>
+    <loc>http://penglei.top/2017/01/11/github-nodejs-hexo-domain-name/</loc>
+    <lastmod>2017-01-11T13:41:04.968Z</lastmod>
+    <data>
+        <display>
+        <title>Hexo站点之域名配置</title>
+        <pubTime>2017-01-11T13:25:45.000Z</pubTime>
+        
+        <tag>Github</tag>
+         
+        <tag>Hexo</tag>
+         
+        <tag>域名</tag>
+         
+        <tag>NextT</tag>
+         
+         
+           
+             
+              <breadCrumb title="Github+Hexo建站系列" url="http://penglei.top/categories/Github-Hexo%E5%BB%BA%E7%AB%99%E7%B3%BB%E5%88%97/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://penglei.top/2017/01/07/github-nodejs-hexo-install/</loc>
     <lastmod>2017-01-07T05:28:45.011Z</lastmod>
     <data>
@@ -15,9 +41,9 @@
          
         <tag>Hexo</tag>
          
-        <tag>Node.js</tag>
-         
         <tag>NextT</tag>
+         
+        <tag>Node.js</tag>
          
          
            
