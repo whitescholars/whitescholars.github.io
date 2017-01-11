@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/898529/201701/898529-20170110211716697-1273754581.png">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/898529/201701/898529-20170110212640556-146950607.png">
 <meta property="og:image" content="http://images2015.cnblogs.com/blog/898529/201701/898529-20170110212735666-1125100419.png">
-<meta property="og:updated_time" content="2017-01-11T14:34:23.874Z">
+<meta property="og:updated_time" content="2017-01-11T14:39:52.400Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo+NextT基本设置">
 <meta name="twitter:description" content="该系列博客列表请访问：http://penglei.top/categories/Github-Hexo建站系列/
@@ -499,15 +499,10 @@
   about: 关于
   search: 搜索
 </code></pre><h4 id="设置侧栏"><a href="#设置侧栏" class="headerlink" title="设置侧栏"></a>设置侧栏</h4><p>默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示，并放置于右侧位置。 可以通过修改 主题配置文件 中的 sidebar 字段来控制侧栏的行为。侧栏的设置包括两个部分，其一是侧栏的位置， 其二是侧栏显示的时机。</p>
-<p>设置侧栏的位置，修改 sidebar.position 的值，支持的选项有：</p>
-<ol>
-<li>left - 靠左放置  </li>
-<li><p>right - 靠右放置</p>
-<p> sidebar:<br>   display: post</p>
-</li>
-</ol>
-<p>设置侧栏显示的时机，修改 sidebar.display 的值，支持的选项有：</p>
-<p>post - 默认行为，在文章页面（拥有目录列表）时显示<br>always - 在所有页面中都显示<br>hide - 在所有页面中都隐藏（可以手动展开）<br>remove - 完全移除</p>
+<p>设置侧栏的位置，修改 sidebar.position 的值，支持的选项有：<br>left - 靠左放置<br>right - 靠右放置</p>
+<pre><code>sidebar:
+  position: left
+</code></pre><p>设置侧栏显示的时机，修改 sidebar.display 的值，支持的选项有：<br>post - 默认行为，在文章页面（拥有目录列表）时显示<br>always - 在所有页面中都显示<br>hide - 在所有页面中都隐藏（可以手动展开）<br>remove - 完全移除</p>
 <pre><code>sidebar:
   display: post
 </code></pre><p>设置头像<br>编辑 主题配置文件， 新增字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是</p>

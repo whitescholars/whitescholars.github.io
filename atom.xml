@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://penglei.top/"/>
-  <updated>2017-01-11T14:34:23.874Z</updated>
+  <updated>2017-01-11T14:39:52.400Z</updated>
   <id>http://penglei.top/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://penglei.top/2017/01/11/hexo_next_baseset/"/>
     <id>http://penglei.top/2017/01/11/hexo_next_baseset/</id>
     <published>2017-01-11T13:49:45.000Z</published>
-    <updated>2017-01-11T14:34:23.874Z</updated>
+    <updated>2017-01-11T14:39:52.400Z</updated>
     
     <content type="html"><![CDATA[<p>该系列博客列表请访问：<a href="http://penglei.top/categories/Github-Hexo建站系列/">http://penglei.top/categories/Github-Hexo建站系列/</a></p>
 <h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>或许在你看到我这篇我文章之前，你已经成功的通过Github+Hexo+NextT搭建个人博客这篇文章搭建了自己的博客系统。但是尽管您已经成功建立博客网站，但是你需要对网站做合适的配置和调整才能迎合你的网站要求。本文主要介绍HEXO的基本操作命令和网站的基本配置方法。而在本篇文章中我将着力讲解NextT主题的配置。其他主题的配置与此类似。</p>
@@ -71,15 +71,10 @@
   about: 关于
   search: 搜索
 </code></pre><h4 id="设置侧栏"><a href="#设置侧栏" class="headerlink" title="设置侧栏"></a>设置侧栏</h4><p>默认情况下，侧栏仅在文章页面（拥有目录列表）时才显示，并放置于右侧位置。 可以通过修改 主题配置文件 中的 sidebar 字段来控制侧栏的行为。侧栏的设置包括两个部分，其一是侧栏的位置， 其二是侧栏显示的时机。</p>
-<p>设置侧栏的位置，修改 sidebar.position 的值，支持的选项有：</p>
-<ol>
-<li>left - 靠左放置  </li>
-<li><p>right - 靠右放置</p>
-<p> sidebar:<br>   display: post</p>
-</li>
-</ol>
-<p>设置侧栏显示的时机，修改 sidebar.display 的值，支持的选项有：</p>
-<p>post - 默认行为，在文章页面（拥有目录列表）时显示<br>always - 在所有页面中都显示<br>hide - 在所有页面中都隐藏（可以手动展开）<br>remove - 完全移除</p>
+<p>设置侧栏的位置，修改 sidebar.position 的值，支持的选项有：<br>left - 靠左放置<br>right - 靠右放置</p>
+<pre><code>sidebar:
+  position: left
+</code></pre><p>设置侧栏显示的时机，修改 sidebar.display 的值，支持的选项有：<br>post - 默认行为，在文章页面（拥有目录列表）时显示<br>always - 在所有页面中都显示<br>hide - 在所有页面中都隐藏（可以手动展开）<br>remove - 完全移除</p>
 <pre><code>sidebar:
   display: post
 </code></pre><p>设置头像<br>编辑 主题配置文件， 新增字段 avatar， 值设置成头像的链接地址。其中，头像的链接地址可以是</p>
